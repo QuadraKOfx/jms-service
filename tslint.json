@@ -44,7 +44,7 @@
       }
     ],
     "no-console": [
-      true,
+      false,
       "debug",
       "info",
       "time",
@@ -83,7 +83,7 @@
       }
     },
     "typedef": [
-      true,
+      false,
       "call-signature"
     ],
     "typedef-whitespace": {
