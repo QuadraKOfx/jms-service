@@ -10,9 +10,9 @@
 
   <h2 matSubheader>Pages</h2>
 
-  <a mat-list-item routerLinkActive="list-item-active">Dashboard</a>
-  <a mat-list-item routerLinkActive="list-item-active">Posts</a>
-  <a mat-list-item routerLinkActive="list-item-active">Articles</a>
+  <!-- TODO USE STATE MANAGER / REDUX TO KEEP WEBSITE STATE ( URL ) -->
+  <a mat-list-item (click)="navigateTo('dashboard')">Dashboard</a>
+  <a mat-list-item (click)="navigateTo('clients')">Clients / Cars</a>
 
   <mat-divider></mat-divider>
 

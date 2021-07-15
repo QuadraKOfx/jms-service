@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DefaultComponent} from './layouts/default/default.component';
+import {RedirectGuard} from './guards/redirect.guard';
 
 const routes: Routes = [
   {
@@ -10,10 +11,21 @@ const routes: Routes = [
   {
     path: '',
     component: DefaultComponent,
-    children: [{
-      path: '',
-      loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)
-    }]
+    canActivate: [RedirectGuard],
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'clients',
+        loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule),
+      },
+      {
+        path: 'client/details/:id',
+        loadChildren: () => import('./pages/client-details/client-details.module').then(m => m.ClientDetailsModule),
+      }
+    ]
   }
 ];
 
@@ -21,4 +33,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

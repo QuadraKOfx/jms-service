@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {DashboardComponent} from './dashboard.component';
+import {ClientDetailsComponent} from './client-details.component';
 import {RouterModule} from '@angular/router';
 
 @NgModule({
@@ -9,10 +9,10 @@ import {RouterModule} from '@angular/router';
     RouterModule.forChild([
       {
         path: '',
-        component: DashboardComponent,
+        component: ClientDetailsComponent,
       },
     ]),
   ],
-  declarations: [DashboardComponent],
+  declarations: [ClientDetailsComponent]
 })
-export class DashboardModule {}
+export class ClientDetailsModule {}

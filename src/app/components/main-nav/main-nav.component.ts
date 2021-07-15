@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(protected router: Router) { }
 
   ngOnInit() {
     console.info('SIDEBAR WORKING');
+  }
+
+  navigateTo(page: string): void {
+    this.router.navigateByUrl(page).catch();
   }
 
 }

@@ -1,0 +1,61 @@
+.flex {
+  display: flex;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-left: 1px solid grey;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.card {
+  flex-basis: 100%;
+  max-width: 100%;
+  padding-top: 1rem;
+}
+
+.card-content {
+  background: lightgray;
+  min-height: 200px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.chip {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 70px;
+}
+
+@media only screen and (max-width: 1440px) {
+  .card {
+    flex-basis: 30%;
+    max-width: 30%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .card {
+    flex-basis: 23%;
+    max-width: 23%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .card {
+    flex-basis: 45%;
+    max-width: 45%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
