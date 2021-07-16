@@ -17,17 +17,16 @@ export interface IClientProfile {
 }
 
 export interface IServiceProfile {
-  date: string;
+  date: Date;
   mileage: string;
-  repair: string;
-  // repair: IRepairOrder;
+  // repair: string;
+  repair: IRepairOrder;
 }
 
-// export enum IRepairOrder {
-//   type_service = 'SERVICE',
-//   type_oil = 'OIL',
-//   type_other = 'OTHER'
-// }
+export interface IRepairOrder {
+  type_service: string;
+  work_performed: string;
+}
 
 const ELEMENT_DATA: IClientProfile[] = [
   {
@@ -37,7 +36,7 @@ const ELEMENT_DATA: IClientProfile[] = [
     telephone: 96423552,
     model: 'Honda',
     chassis: 73654783,
-    service: {date: '11/12/2021', mileage: '50Mil', repair: null},
+    service: {date: new Date('11/12/2021'), mileage: '50Mil', repair: null},
     actions: ['mode_edit', 'delete']
   },
   {
@@ -47,7 +46,7 @@ const ELEMENT_DATA: IClientProfile[] = [
     telephone: 96423552,
     model: 'KIA',
     chassis: 28347283,
-    service: {date: '09/03/2021', mileage: '25Mil', repair: null},
+    service: {date: new Date('09/03/2021'), mileage: '25Mil', repair: null},
     actions: ['mode_edit', 'delete']
   }
 ];
@@ -89,7 +88,7 @@ export class UsersPageComponent implements OnInit {
   editClient(event, element: IClientProfile): void {
     event.preventDefault();
     event.stopPropagation();
-    console.info(element);
+    this.router.navigate(['/client/edit/'.concat(element.id)], { state: { data: element } }).catch();
   }
 
   deleteClient(event, element: IClientProfile): void {
