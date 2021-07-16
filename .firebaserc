@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "jms-management-system"
+  },
+  "targets": {
+    "jms-management-system": {
+      "hosting": {
+        "JMSAdmin": [
+          "jms-management-system"
+        ]
+      }
+    }
   }
 }

@@ -1,0 +1,124 @@
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-left: 1px solid grey;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.client-card {
+  height: 450px;
+  width: 400px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: rgba(0,0,0,.17);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  border-radius: 5px;
+}
+
+.card {
+  flex-basis: 100%;
+  max-width: 100%;
+  padding-top: 1rem;
+}
+
+.card-content {
+  background: lightgray;
+  min-height: 200px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.chip {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 70px;
+}
+
+.container {
+  width: 100%;
+  padding-top: 5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.i-chip-horizontal {
+  display: flex;
+  width: 100%;
+}
+
+.info-text {
+  margin-top: 5px;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #BB162B;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  padding: .375rem .75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+}
+
+@media only screen and (max-width: 1440px) {
+.card {
+flex-basis: 30%;
+max-width: 30%;
+}
+
+.container {
+max-width: 1240px;
+}
+}
+
+@media only screen and (min-width: 1440px) {
+.card {
+flex-basis: 23%;
+max-width: 23%;
+}
+
+.container {
+max-width: 1240px;
+}
+}
+
+@media only screen and (max-width: 1024px) {
+.card {
+flex-basis: 45%;
+max-width: 45%;
+}
+
+.container {
+max-width: 900px;
+}
+}
+
+@media only screen and (max-width: 800px) {
+.card {
+flex-basis: 100%;
+max-width: 100%;
+}
+
+.container {
+max-width: 700px;
+}
+}

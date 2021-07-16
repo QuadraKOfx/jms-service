@@ -1,0 +1,56 @@
+<div class="container">
+
+  <div class="flex just-center">
+
+    <div class="client-card">
+
+      <!-- Logo Container -->
+      <div class="flex just-center">
+        <div class="logo-container">
+          <div class="logo-avatar">
+          </div>
+        </div>
+      </div>
+
+      <!-- Credentials -->
+      <div class="flex just-center top-5">
+        <form class="width-300" [formGroup]="myForm" (ngSubmit)="submit()">
+          <!-- EMAIL -->
+          <div class="form-group">
+            <div class="i-chip-horizontal">
+              <span class="icons border-l-15 material-icons">mail</span>
+              <input type="email"
+                     formControlName="email"
+                     placeholder="email"
+                     class="form-control border-r-15 no-focus">
+            </div>
+          </div>
+          <!-- PASSWORD -->
+          <div class="form-group top-1">
+            <div class="i-chip-horizontal">
+              <span class="icons border-l-15 material-icons">lock</span>
+              <input type="password"
+                     placeholder="password"
+                     formControlName="password"
+                     class="form-control border-r-15 no-focus">
+            </div>
+          </div>
+          <!-- REMEMBER-ME -->
+          <div class="form-group top-1">
+            <div class="i-chip-horizontal">
+              <input type="checkbox" class="remember-me-info">
+              <span class="info-text">Remember Me</span>
+            </div>
+          </div>
+          <!-- BUTTONS -->
+          <div class="bot-1">
+            <input type="submit" value="Login" class="btn primary-btn float-right">
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

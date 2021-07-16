@@ -1,0 +1,48 @@
+.flex {
+  display: flex;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+.top-5 {
+  margin-top: 5rem;
+}
+
+.top-1 {
+  margin-top: 1rem;
+}
+
+.bot-1 {
+  margin-bottom: 1rem;
+}
+
+.border-l-15 {
+  border-radius: 15px 0 0 15px;
+}
+
+.border-r-15 {
+  border-radius: 0 15px 15px 0;
+}
+
+.no-focus {
+  outline: none;
+}
+
+.back-red {
+  background-color: #FFABAB;
+}
+
+.width-300 {
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
