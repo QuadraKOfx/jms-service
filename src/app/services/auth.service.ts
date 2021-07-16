@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from '@angular/fire/auth';
+import firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class AuthService {
     });
   }
 
-  isAuthenticated() {
-    return this.fireAuth.user;
+  logOut(): Promise<any> {
+    return this.fireAuth.signOut();
   }
 }

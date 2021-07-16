@@ -23,9 +23,9 @@
     Contacts
   </a>
 
-  <a mat-list-item routerLinkActive="list-item-active">
-    <mat-icon>contact_phone</mat-icon>
-    Leads
+  <a mat-list-item (click)="signOut($event)">
+    <mat-icon>logout</mat-icon>
+    Log out
   </a>
 
 </mat-nav-list>
