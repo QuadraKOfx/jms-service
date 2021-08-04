@@ -79,6 +79,10 @@
   border: 1px solid #ced4da;
 }
 
+.card-container {
+  border: none;
+}
+
 @media only screen and (max-width: 1440px) {
 .card {
 flex-basis: 30%;

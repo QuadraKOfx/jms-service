@@ -1,5 +1,45 @@
-<div class="main-container">
+<div class="main-container" *ngIf="state$">
 
-  <span>Edit Page Coming Soon...</span>
+  <div class="example-container">
+    <div class="form-container">
+      <form [formGroup]="clientForm">
+
+        <div class="add-info back-red">
+          <h2>Update Client Information</h2>
+        </div>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Company (disabled)</mat-label>
+          <input matInput disabled value="Google">
+        </mat-form-field>
+
+        <table class="example-full-width"><tr>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>First name</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last name</mat-label>
+            <input matInput formControlName="lastName">
+          </mat-form-field></td>
+        </tr></table>
+
+        <table class="example-full-width"><tr>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Ex. 100 Main St" formControlName="address">
+          </mat-form-field></td>
+        </tr></table>
+
+        <td><mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Telephone</mat-label>
+          <input matInput formControlName="telephone">
+        </mat-form-field></td>
+
+        <button mat-raised-button type="submit" (click)="onSubmit($event, clientForm.value)">Save</button>
+      </form>
+    </div>
+  </div>
+
 
 </div>

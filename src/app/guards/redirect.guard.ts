@@ -16,6 +16,7 @@ export class RedirectGuard implements CanActivate {
     return new Promise((resolve => {
       this.authFire.onAuthStateChanged((user) => {
         if (user) {
+          console.info('User found :)');
           resolve(true);
         } else {
           this.router.navigateByUrl('/login').catch();

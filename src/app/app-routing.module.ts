@@ -28,6 +28,14 @@ const routes: Routes = [
       {
         path: 'client/edit/:id',
         loadChildren: () => import('./pages/edit-client/edit-client.module').then(m => m.EditClientModule),
+      },
+      {
+        path: 'client/add',
+        loadChildren: () => import('./pages/add-client/add-client.module').then(m => m.AddClientModule),
+      },
+      {
+        path: 'client/:id/new-vehicle',
+        loadChildren: () => import('./pages/add-vehicle/add-vehicle.module').then(m => m.AddVehicleModule)
       }
     ]
   }

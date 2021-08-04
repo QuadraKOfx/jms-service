@@ -1,0 +1,45 @@
+<h1>J.M.S JIMMY'S MOTOR SERVICE</h1>
+<h3 mat-dialog-title>Client's Receipt Card</h3>
+<!--<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>-->
+
+<!-- TABLE -->
+<div class="table-container">
+
+  <!-- INFO-CARD -->
+  <div class="i-chip-horizontal">
+    <div class="width-300">
+      <app-es-table [dataSource]="tableData"
+                    [clickedRows]="clickedRows"
+                    [displayedColumns]="clientInfo"
+                    [invert]="true">
+      </app-es-table>
+    </div>
+    <div class="width-600 left-1">
+<!--      <app-es-table-->
+<!--        [dataSource]="[tableData[0]['carInfo']]"-->
+<!--        [clickedRows]="clickedRows"-->
+<!--        [displayedColumns]="carInfo"-->
+<!--        [invert]="true">-->
+<!--      </app-es-table>-->
+    </div>
+  </div>
+
+
+  <!-- SERVICE INFO DETAILS -->
+  <div class="width-300 top-1">
+<!--    <app-es-table-->
+<!--      [dataSource]="[tableData[0]['carInfo']['service']]"-->
+<!--      [clickedRows]="clickedRows"-->
+<!--      [displayedColumns]="serviceInfo"-->
+<!--      [invert]="false">-->
+<!--    </app-es-table>-->
+  </div>
+
+</div>
+
+
+<div mat-dialog-actions class="top-1">
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button>Print</button>
+  <button mat-button>Edit</button>
+</div>

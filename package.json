@@ -23,11 +23,14 @@
     "@angular/platform-browser": "~11.2.5",
     "@angular/platform-browser-dynamic": "~11.2.5",
     "@angular/router": "~11.2.5",
+    "@ngrx/effects": "^12.3.0",
+    "@ngrx/store": "^12.3.0",
+    "@ngrx/store-devtools": "^12.3.0",
+    "firebase": "^7.0 || ^8.0",
     "redux": "^4.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.3",
-    "firebase": "^7.0 || ^8.0"
+    "zone.js": "~0.11.3"
   },
   "devDependencies": {
     "@angular-devkit/architect": ">= 0.900 < 0.1300",

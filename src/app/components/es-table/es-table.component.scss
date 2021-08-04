@@ -1,0 +1,46 @@
+.table-container {
+  width: 100%;
+}
+
+.multi-button-container {
+  padding-bottom: 1rem;
+  button:not(:first-child) {
+    margin-left: 1rem;
+  }
+}
+
+.mat-row:hover {
+  .mat-cell {
+    .hover-event {
+      background: lightgrey;
+      border-color: grey;
+    }
+  }
+}
+
+.inverted-columns {
+  font-size: 14px;
+  color: rgba(0,0,0,.87);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  &.column-red {
+    color: #BB162B;
+  }
+}
+
+.mat-cell, .mat-footer-cell {
+  &.column-red {
+    color: #BB162B;
+  }
+}
+
+.table-actions {
+  mat-icon:not(first-child) {
+    margin-left: .5rem;
+  }
+}
+
+.table-es-container {
+  min-width: 100%;
+  min-height: 100%;
+}

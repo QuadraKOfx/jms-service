@@ -1,0 +1,31 @@
+<!-- INVERT SET TO TRUE / TABLE COLUMNS INVERTED -->
+<ng-container *ngIf="invert; else normal">
+  <table #table mat-table [dataSource]="displayTable" class="table-es-container" *ngIf="showTable">
+
+    <ng-container [matColumnDef]="column" *ngFor="let column of formattedColumns">
+      <th mat-header-cell class="inverted-columns" [ngClass]="{'column-red': column === firstAttribute}"
+          *matHeaderCellDef> {{ column | titlecase}}</th>
+      <td mat-cell [ngClass]="{'column-red': column === firstAttribute}" *matCellDef="let element; let i = index">{{element[column] | titlecase}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="formattedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: formattedColumns"></tr>
+  </table>
+</ng-container>
+
+
+<!-- NORMAL MODE TABLE -->
+<ng-template #normal>
+
+  <table mat-table [dataSource]="displayTable" class="table-es-container">
+    <ng-container *ngFor="let col of displayedColumns" [matColumnDef]="col">
+      <th mat-header-cell class="inverted-columns column-red" *matHeaderCellDef> {{ col | titlecase }}</th>
+      <td mat-cell *matCellDef="let element"> {{ element[col] | titlecase }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+  </table>
+</ng-template>
+

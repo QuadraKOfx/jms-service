@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ClientDetailsComponent} from './client-details.component';
 import {RouterModule} from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import {RouterModule} from '@angular/router';
         component: ClientDetailsComponent,
       },
     ]),
+    MatButtonModule,
   ],
   declarations: [ClientDetailsComponent]
 })

@@ -1,0 +1,6 @@
+.multi-button-container {
+  padding-bottom: 1rem;
+  button:not(:first-child) {
+    margin-left: 1rem;
+  }
+}

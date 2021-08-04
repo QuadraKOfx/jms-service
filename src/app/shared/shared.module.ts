@@ -9,13 +9,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
 import {MainNavComponent} from '../components/main-nav/main-nav.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import {DialogModule} from '../components/dialog/dialog.module';
+import {CardDialogModule} from '../components/card-dialog/card-dialog.module';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [MainNavComponent],
   imports: [
     CommonModule,
-    DialogModule,
+    CardDialogModule,
     MatDividerModule,
     MatToolbarModule,
     MatIconModule,
@@ -24,6 +25,7 @@ import {DialogModule} from '../components/dialog/dialog.module';
     MatTableModule,
     RouterModule,
     MatDialogModule,
+    MatNativeDateModule
   ],
   exports: [MainNavComponent]
 })

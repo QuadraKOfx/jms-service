@@ -1,1 +1,27 @@
 
+<ng-container *ngIf="appState">
+  <ng-container *ngIf="customerDetails$">
+    <div class="main-container">
+      <h2>Viewing {{customerDetails$.name}}'s Details</h2>
+
+
+      <ng-container *ngIf="customerDetails$.carIds; else empty">
+
+      </ng-container>
+
+      <div class="multi-button-container top-5">
+        <button (click)="addNewCar($event)" mat-raised-button class="demo-button">
+          Add New Car
+        </button>
+      </div>
+
+
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #empty>
+  <div class="main-container">
+    <h3>Please insert a new Car</h3>
+  </div>
+</ng-template>

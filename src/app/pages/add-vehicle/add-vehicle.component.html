@@ -1,0 +1,127 @@
+<ng-container *ngIf="appState">
+  <ng-container *ngIf="customerDetails$">
+    <div class="main-container">
+
+      <div class="example-container">
+        <div class="form-container">
+          <form [formGroup]="clientForm">
+
+            <div class="add-info back-red">
+              <h2>Car Information</h2>
+            </div>
+
+            <div formGroupName="carInfo">
+              <table class="example-full-width">
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Make</mat-label>
+                      <input matInput placeholder="Honda" formControlName="make">
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Model</mat-label>
+                      <input matInput placeholder="KIA">
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+
+              <table class="example-full-width">
+                <td>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Chassis No.</mat-label>
+                    <input matInput placeholder="Chassis No.">
+                  </mat-form-field>
+                </td>
+
+                <td>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Ignition Key</mat-label>
+                    <input matInput placeholder="DGF3456KF" formControlName="ignitionKey">
+                  </mat-form-field>
+                </td>
+              </table>
+
+
+              <table class="example-full-width">
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Engine No.</mat-label>
+                      <input matInput placeholder="Engine No." formControlName="engine">
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Date of Reg</mat-label>
+                      <input matInput formControlName="date" [matDatepicker]="picker">
+                      <mat-datepicker-toggle matSuffix [for]="picker">
+                        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                      </mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Reg. No.</mat-label>
+                      <input matInput placeholder="Plates" formControlName="plates">
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="add-info back-red top-5">
+              <h2>Service Information</h2>
+            </div>
+
+            <div formGroupName="service">
+              <table class="example-full-width">
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Date</mat-label>
+                      <input matInput [matDatepicker]="picker2" formControlName="date">
+                      <mat-datepicker-toggle matSuffix [for]="picker2">
+                        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                      </mat-datepicker-toggle>
+                      <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Mileage Km</mat-label>
+                      <input matInput placeholder="Mi" formControlName="mileage">
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Repair Order</mat-label>
+                      <mat-select (selectionChange)="selectRepairType($event.value)">
+                        <mat-option *ngFor="let option of repairType" [value]="option.value">
+                          {{option.viewValue}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Work Performed</mat-label>
+                <input matInput placeholder="Write Something..">
+              </mat-form-field>
+            </div>
+
+
+            <button mat-raised-button type="submit" (click)="onSubmit($event, clientForm.value)">Save</button>
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+  </ng-container>
+</ng-container>

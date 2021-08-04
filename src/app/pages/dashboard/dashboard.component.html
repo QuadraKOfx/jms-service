@@ -1,4 +1,6 @@
-<div class="main-container">
+<!-- todo loading state manager -->
+
+<div class="main-container" *ngIf="appState.users">
 
   <div class="c-dash--divider">
 
@@ -14,8 +16,10 @@
              (click)="toClientsPage($event)">
 
           <div class="i-chip">
-            <span class="chip material-icons">directions_car</span>
-            <span class="chip-text">2 Clients</span>
+            <span class="chip material-icons">supervised_user_circle</span>
+            <ng-container *ngIf="appState">
+              <span class="chip-text">{{appState.users.length}} Clients</span>
+            </ng-container>
           </div>
 
         </div>
@@ -23,6 +27,14 @@
 
       <div class="card">
         <div class="card-content">
+
+          <div class="i-chip">
+            <span class="chip material-icons">directions_car</span>
+            <ng-container *ngIf="appState">
+              <span class="chip-text">{{appState.users.length}} Cars</span>
+            </ng-container>
+          </div>
+
         </div>
       </div>
 
