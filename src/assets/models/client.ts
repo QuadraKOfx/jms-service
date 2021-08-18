@@ -29,6 +29,7 @@ export class ClientProfile implements IClientProfile {
 
 export interface ICarProfile {
   id: string;
+  $key: string;
   make: string;
   model: string;
   ignitionKey: string;
@@ -48,68 +49,4 @@ export interface IServiceProfile {
   work: string;
 }
 
-
-// const ELEMENT_DATA: IClientProfile[] = [
-//   {
-//     id: '1',
-//     name: 'Marios',
-//     address: '37 Stasinou Street',
-//     telephone: '96423552',
-//     actions: ['mode_edit', 'delete'],
-//     carId: '1',
-//     carInfo: [
-//       {
-//         id: '1',
-//         make: 'Honda',
-//         model: 'Civic',
-//         chassis: '1HIGH41JAXEN',
-//         engine: '62WVC10332',
-//         date: new Date('11/12/2021').toDateString(),
-//         plates: 'KAI234',
-//         service: {
-//           id: '1',
-//           date: new Date('11/12/2021').toDateString(),
-//           mileage: '40Mi',
-//           repair: ['Service'],
-//           work: null
-//         }
-//       },
-//       {
-//         make: 'Toyota',
-//         model: 'Auris',
-//         chassis: '1HIGH41JAXEN',
-//         engine: '62WVC10332',
-//         date: new Date('11/12/2021').toDateString(),
-//         plates: 'KAI234',
-//         service: {
-//           date: new Date('11/12/2021').toDateString(),
-//           mileage: '24Mi',
-//           repair: ['Service'],
-//           work: null
-//         }
-//       }],
-//   },
-//   {
-//     id: '2',
-//     name: 'George',
-//     address: '6 Panagron Street',
-//     telephone: '96423552',
-//     ignitionKey: '32453DEAD23',
-//     actions: ['mode_edit', 'delete'],
-//     carInfo: [{
-//       make: 'KIA',
-//       model: 'Seed',
-//       chassis: '1HIGH41JAXEN',
-//       engine: '62WVC10332',
-//       date: new Date('04/08/2021').toDateString(),
-//       plates: 'KAI234',
-//       service: {
-//         date: new Date('11/12/2021').toDateString(),
-//         mileage: '66Mi',
-//         repair: ['Service'],
-//         work: null
-//       }
-//     }],
-//   }
-// ];
 

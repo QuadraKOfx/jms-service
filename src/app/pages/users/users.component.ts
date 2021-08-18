@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {Subscription} from 'rxjs';
-import {NavigationStart, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {IClientProfile} from '../../../assets/models/client';
 import {FirebaseCrudService} from '../../services/firebase-crud.service';
 import {Store} from '@ngrx/store';
 import {getAppState, IAppState} from '../../state-manager/users/app.selectors';
-import {app_setUsers} from '../../state-manager/users/app.actions';
 import {CardDialogComponent} from '../../components/card-dialog/card-dialog.component';
 
 @Component({

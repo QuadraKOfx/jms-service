@@ -1,3 +1,14 @@
+<!-- HEADER -->
+<div class="main-container">
+  <ng-container *ngIf="customerDetails$">
+    <h3>Customer Name:  {{customerDetails$.name}}</h3>
+    <h3>Customer Last Name:  {{customerDetails$.lastName}}</h3>
+  </ng-container>
+</div>
+
+
+<!-- BODY -->
+
 <ng-container *ngIf="appState">
   <ng-container *ngIf="customerDetails$">
     <div class="main-container">
@@ -22,7 +33,7 @@
                   <td>
                     <mat-form-field class="example-full-width" appearance="fill">
                       <mat-label>Model</mat-label>
-                      <input matInput placeholder="KIA">
+                      <input matInput placeholder="KIA" formControlName="model">
                     </mat-form-field>
                   </td>
                 </tr>
@@ -73,47 +84,57 @@
               </table>
             </div>
 
-            <div class="add-info back-red top-5">
-              <h2>Service Information</h2>
-            </div>
 
-            <div formGroupName="service">
-              <table class="example-full-width">
-                <tr>
-                  <td>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                      <mat-label>Date</mat-label>
-                      <input matInput [matDatepicker]="picker2" formControlName="date">
-                      <mat-datepicker-toggle matSuffix [for]="picker2">
-                        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                      </mat-datepicker-toggle>
-                      <mat-datepicker #picker2></mat-datepicker>
-                    </mat-form-field>
-                  </td>
-                  <td>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                      <mat-label>Mileage Km</mat-label>
-                      <input matInput placeholder="Mi" formControlName="mileage">
-                    </mat-form-field>
-                  </td>
-                  <td>
-                    <mat-form-field appearance="fill">
-                      <mat-label>Repair Order</mat-label>
-                      <mat-select (selectionChange)="selectRepairType($event.value)">
-                        <mat-option *ngFor="let option of repairType" [value]="option.value">
-                          {{option.viewValue}}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </td>
-                </tr>
-              </table>
+            <section class="example-section top-2">
+              <mat-checkbox (change)="enableService($event)" class="example-margin">Let me create a Service!
+              </mat-checkbox>
+            </section>
 
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Work Performed</mat-label>
-                <input matInput placeholder="Write Something..">
-              </mat-form-field>
-            </div>
+            <ng-container *ngIf="!disabled">
+
+              <div class="add-info back-red">
+                <h2>Service Information</h2>
+              </div>
+
+              <form [formGroup]="clientForm.get('carInfo').get('service')">
+                <table class="example-full-width">
+                  <tr>
+                    <td>
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Date</mat-label>
+                        <input matInput [matDatepicker]="picker2" formControlName="date">
+                        <mat-datepicker-toggle matSuffix [for]="picker2">
+                          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                      </mat-form-field>
+                    </td>
+                    <td>
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Mileage Km</mat-label>
+                        <input matInput placeholder="Mi" formControlName="mileage">
+                      </mat-form-field>
+                    </td>
+                    <td>
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Repair Order</mat-label>
+                        <mat-select (selectionChange)="selectRepairType($event.value)">
+                          <mat-option *ngFor="let option of repairType" [value]="option.value">
+                            {{option.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                </table>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Work Performed</mat-label>
+                  <input matInput placeholder="Write Something.." formControlName="work">
+                </mat-form-field>
+              </form>
+
+            </ng-container>
 
 
             <button mat-raised-button type="submit" (click)="onSubmit($event, clientForm.value)">Save</button>

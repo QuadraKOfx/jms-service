@@ -4,8 +4,9 @@ import {Subscription} from 'rxjs';
 import {getAppState, IAppState} from '../../state-manager/users/app.selectors';
 import {IClientProfile} from '../../../assets/models/client';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {IRepairType} from '../add-client/add-client.component';
+import {FirebaseCrudService} from '../../services/firebase-crud.service';
 
 @Component({
   selector: 'app-insert-vehicle',
@@ -20,6 +21,7 @@ export class AddVehicleComponent implements OnInit {
   customer$: string;
   customerDetails$: IClientProfile;
   clientForm: FormGroup;
+  disabled = true;
 
   repairType: IRepairType[] = [
     {value: 'service', viewValue: 'Service'},
@@ -29,6 +31,7 @@ export class AddVehicleComponent implements OnInit {
 
   constructor(private store: Store,
               private formBuilder: FormBuilder,
+              private crudService: FirebaseCrudService,
               private actRoute: ActivatedRoute,
               private router: Router) {
     this.subscriptions = new Subscription();
@@ -37,6 +40,28 @@ export class AddVehicleComponent implements OnInit {
   ngOnInit() {
     this.dispatchSubscriptions();
     this.prepareReactiveForms();
+  }
+
+  onSubmit(event: Event, data: any) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.crudService.addCar(data).then(() => {
+      console.info('Done adding car');
+    });
+  }
+
+  enableService(event) {
+    this.disabled = !event.checked;
+  }
+
+  selectRepairType(event: Event): void {
+    this.clientForm.patchValue({
+      carInfo: {
+        service: {
+          repair: event
+        }
+      }
+    });
   }
 
   private dispatchStoreState() {

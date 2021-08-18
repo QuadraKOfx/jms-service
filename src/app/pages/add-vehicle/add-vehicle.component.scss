@@ -18,23 +18,24 @@
   max-width: 40%;
 }
 
+.disabled {
+  pointer-events: none;
+  background-color: lightgray;
+}
+
 td {
   padding-right: 8px;
 }
 
-@media only screen and (max-width: 1440px) {
-
+.example-margin {
+  margin: 0 12px;
 }
 
-@media only screen and (min-width: 1440px) {
-  .example-container {
-    padding-left: 15%;
-    padding-right: 15%;
-  }
+.example-section {
+  padding: 1rem;
 }
 
-@media only screen and (max-width: 1024px) {
-  .example-container {
-    padding: unset;
-  }
+ul {
+  list-style-type: none;
+  margin-top: 4px;
 }
